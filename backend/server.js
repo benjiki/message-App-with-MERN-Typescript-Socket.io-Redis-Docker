@@ -4,11 +4,13 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 import http from "http";
 import { connectDB } from "./utils/db.js";
-
+import { errorHandler } from "./middlewares/errorHandler.js";
+import authRouter from "./routes/auth.route.js";
 dotenv.config();
 
 const app = express();
 const httpServer = http.createServer(app);
+app.use(express.json());
 
 app.use(
   cors({
@@ -16,8 +18,11 @@ app.use(
     credentials: true,
   })
 );
-
+app.use(errorHandler);
 app.use(cookieParser());
+
+// Routes
+app.use("/api/auth", authRouter);
 
 try {
   await connectDB();
