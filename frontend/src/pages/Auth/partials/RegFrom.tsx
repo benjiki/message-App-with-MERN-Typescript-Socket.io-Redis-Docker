@@ -27,10 +27,10 @@ const regSchema = z
     email: z.email({ message: "Invalid email address" }),
     password: z
       .string()
-      .min(8, { message: "Password must be at least 6 characters" }),
+      .min(8, { message: "Password must be at least 8 characters" }),
     confirmpassword: z
       .string()
-      .min(8, { message: "Confirm Password must be at least 6 characters" }),
+      .min(8, { message: "Confirm Password must be at least 8 characters" }),
   })
   .refine((data) => data.password === data.confirmpassword, {
     message: "password and confirmpassword do not  match",
