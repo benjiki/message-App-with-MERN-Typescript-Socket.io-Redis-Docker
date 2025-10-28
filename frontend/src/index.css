@@ -1,1 +1,33 @@
-@import "tailwindcss"
+@import "tailwindcss";
+
+/* ===========================
+   ☕ Coffee Theme — Light Mode
+   =========================== */
+@theme {
+  --color-coffeePrimary: #6F4E37;   /* Deep espresso brown — buttons, accents */
+  --color-coffeeDark: #4B2E1E;      /* Rich roast — hover states, headers */
+  --color-coffeeLight: #A67B5B;     /* Latte tone — soft highlights */
+  --color-coffeeBg: #F4EDE4;        /* Creamy off-white — background */
+  --color-coffeeSurface: #EBDCC3;   /* Subtle beige — cards, containers */
+  --color-coffeeText: #2B1A14;      /* Dark mocha — main text */
+  --color-coffeeTextAlt: #5C4033;   /* Medium roast — secondary text */
+  --color-coffeeAccent: #C69C72;    /* Caramel — links, icons, highlights */
+  --color-coffeeSuccess: #A3B18A;   /* Matcha-green — success states */
+  --color-coffeeError: #B3541E;     /* Rusty red-brown — error states */
+}
+
+/* ===========================
+   🌙 Dark Mode (Espresso Theme)
+   =========================== */
+@theme dark {
+  --color-coffeePrimary: #A67B5B;   /* Latte highlight — stands out on dark bg */
+  --color-coffeeDark: #F4EDE4;      /* Light cream — text & icons */
+  --color-coffeeLight: #C69C72;     /* Caramel — accents */
+  --color-coffeeBg: #2B1A14;        /* Deep espresso — background */
+  --color-coffeeSurface: #3B2415;   /* Medium roast — cards, containers */
+  --color-coffeeText: #EBDCC3;      /* Creamy beige — text */
+  --color-coffeeTextAlt: #A67B5B;   /* Latte tone — secondary text */
+  --color-coffeeAccent: #C69C72;    /* Caramel — accent */
+  --color-coffeeSuccess: #A3B18A;   /* Still warm green */
+  --color-coffeeError: #D27750;     /* Softer rusty red for dark bg */
+}

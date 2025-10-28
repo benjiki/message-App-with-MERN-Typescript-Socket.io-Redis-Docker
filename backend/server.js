@@ -14,10 +14,11 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin: process.env.CLIENT_ORIGIN,
+    origin: process.env.CLIENT_ORIGIN?.replace(/\/$/, ""), // remove trailing slash if any
     credentials: true,
   })
 );
+
 app.use(errorHandler);
 app.use(cookieParser());
 

@@ -35,6 +35,10 @@ export const userRegistationValidationSchema = Joi.object({
     "string.max": "Password cannot exceed 128 characters.",
     "any.required": "Password is required.",
   }),
+  confirmpassword: Joi.string().required().valid(Joi.ref("password")).messages({
+    "any.only": "Password and confirm password do not match",
+    "string.empty": "Confirm password is required",
+  }),
 });
 
 export const userLoginValidationSchema = Joi.object({
