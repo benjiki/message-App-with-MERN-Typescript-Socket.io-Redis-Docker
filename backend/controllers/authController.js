@@ -75,6 +75,22 @@ class AuthController {
       next(error);
     }
   }
-  static async logout(req, res) {}
+  static async logout(req, res, next) {
+    try {
+      // Clear the JWT cookie
+      res.clearCookie("jwt", {
+        httpOnly: true,
+        sameSite: "strict",
+        secure: process.env.NODE_ENV === "production",
+      });
+
+      res.status(200).json({
+        success: true,
+        message: "Logged out successfully",
+      });
+    } catch (error) {
+      next(error);
+    }
+  }
 }
 export default AuthController;
