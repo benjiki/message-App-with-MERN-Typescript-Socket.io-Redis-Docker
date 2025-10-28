@@ -13,7 +13,17 @@ const App: React.FC = () => {
       </Routes>
 
       {/* Keep richColors to respect your CSS vars */}
-      <Toaster position="top-right" theme="system" />
+      <Toaster
+        toastOptions={{
+          classNames: {
+            toast: "!bg-coffeeBg",
+            title: "!text-coffeeText",
+            description: "!text-coffeeTextAlt",
+          },
+        }}
+        position="top-right"
+        theme="system"
+      />
     </>
   );
 };
