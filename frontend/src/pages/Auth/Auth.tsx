@@ -3,7 +3,7 @@ import { Mail } from "lucide-react";
 import LoginForm from "./partials/LoginForm";
 import RegForm from "./partials/RegFrom";
 const Auth: React.FC = () => {
-  const [isLogin, setIsLogin] = useState(false);
+  const [isLogin, setIsLogin] = useState(true);
   return (
     <div className="min-h-screen w-full bg-coffeeBg  flex flex-col md:flex-row">
       <div className="w-full md:w-6/12 bg-coffeeSurface p-0 text-coffeeText flex flex-col justify-center">

@@ -127,7 +127,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSwitch }) => {
       </form>
 
       <p className="text-sm text-coffeeTextAlt mt-6 text-center">
-        Already have an account?{" "}
+        Don't have an account?{" "}
         <button
           onClick={onSwitch}
           className="text-coffeeAccent hover:underline font-medium"
