@@ -54,9 +54,17 @@ const RegForm: React.FC<RegFormProps> = ({ onSwitch }) => {
       toast.success("Account Created go and sign in ");
     },
     onError: (error) => {
-      const axiosError = error as AxiosError<{ errors?: string[] }>;
+      const axiosError = error as AxiosError<{
+        success?: boolean;
+        message?: string;
+        errors?: string[];
+      }>;
+
       const msg =
-        axiosError.response?.data?.errors?.join(", ") ?? "Registration failed";
+        axiosError.response?.data?.message || // AppError
+        axiosError.response?.data?.errors?.join(", ") || // Joi validation
+        "Registration failed"; // fallback
+
       toast.error(msg);
     },
   });

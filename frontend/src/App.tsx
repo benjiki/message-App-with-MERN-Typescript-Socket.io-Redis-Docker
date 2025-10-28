@@ -11,7 +11,9 @@ const App: React.FC = () => {
         <Route path="/" element={<Chat />} />
         <Route path="/auth" element={<Auth />} />
       </Routes>
-      <Toaster />
+
+      {/* Keep richColors to respect your CSS vars */}
+      <Toaster position="top-right" theme="system" />
     </>
   );
 };

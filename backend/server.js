@@ -24,7 +24,7 @@ app.use(cookieParser());
 
 // Routes
 app.use("/api/auth", authRouter);
-
+app.use(errorHandler);
 try {
   await connectDB();
 

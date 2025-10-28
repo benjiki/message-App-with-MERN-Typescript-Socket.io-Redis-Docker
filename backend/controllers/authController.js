@@ -3,6 +3,7 @@ import {
   userLoginValidationSchema,
 } from "../validators/User.validation.js";
 import * as authService from "../services/auth.service.js";
+import AppError from "../utils/AppError.js";
 
 class AuthController {
   static async register(req, res, next) {
@@ -16,7 +17,7 @@ class AuthController {
 
       if (error) {
         const messages = error.details.map((err) => err.message);
-        return res.status(400).json({ errors: messages });
+        throw new AppError(messages.join(", "), 400);
       }
       const registeredUser = await authService.regUser(value);
 
